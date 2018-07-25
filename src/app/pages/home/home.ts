@@ -4,7 +4,7 @@ import { Platform } from '@ionic/angular';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { Plugins } from '@capacitor/core';
-
+import { SMSPlugin } from 'capacitor-sms';
 
 @Component({
   selector: 'app-page-home',
@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private platform: Platform, private formBuilder: FormBuilder) {
     this.createForm();
+    this.testPluginWeb();
   }
 
   ngOnInit() {
@@ -35,6 +36,12 @@ export class HomeComponent implements OnInit {
   smsFormSubmit() {
     console.log('HomePage::smsFormSubmit | method called');
     console.log(this.smsForm.value);
+  }
+
+  async testPluginWeb() {
+    console.log('HomePage::testPluginWeb | method called');
+    const result = await SMSPlugin.echo({value: 'hola' });
+    console.log('result', result);
   }
 
 }

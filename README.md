@@ -1,12 +1,8 @@
 # AngularIonicCapacitorSMS
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 Technologies: Angular, Ionic, Capacitor.
-
-## Example
-
-![App](readme_resources/app.gif "App")
 
 ## Development server
 
