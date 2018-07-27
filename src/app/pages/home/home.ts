@@ -4,7 +4,7 @@ import { Platform } from '@ionic/angular';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { Plugins } from '@capacitor/core';
-import { SMSPlugin } from 'capacitor-sms';
+import { SMSWeb } from 'capacitor-sms';
 
 @Component({
   selector: 'app-page-home',
@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
 
   async testPluginWeb() {
     console.log('HomePage::testPluginWeb | method called');
-    const result = await SMSPlugin.echo({value: 'hola' });
+    const result = await SMSWeb.echo({value: 'hola' });
     console.log('result', result);
   }
 
