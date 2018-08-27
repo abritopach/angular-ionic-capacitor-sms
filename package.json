@@ -30,7 +30,7 @@
     "@ionic/angular": "4.0.0-beta.3",
     "@ionic/cli-hooks": "1.0.0-rc.1",
     "@ionic/schematics-angular": "^1.0.5",
-    "capacitor-sms": "0.0.1-alpha.1-0",
+    "capacitor-sms": "0.0.1-alpha.1-1",
     "core-js": "^2.5.7",
     "rxjs": "6.2.2",
     "rxjs-compat": "6.2.2",
