@@ -1,4 +1,4 @@
-@ionic/core@4.0.0-beta.3
+@ionic/core@4.0.0-beta.5
 MIT
 Copyright 2015-present Drifty Co.
 http://drifty.com/
@@ -70,7 +70,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-@ionic/angular@4.0.0-beta.3
+@ionic/angular@4.0.0-beta.5
 MIT
 MIT
 
