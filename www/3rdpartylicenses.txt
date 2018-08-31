@@ -132,7 +132,7 @@ If the Work includes a "NOTICE" text file as part of its distribution, then any 
 
 END OF TERMS AND CONDITIONS
 
-@angular/common@6.1.4
+@angular/common@6.1.6
 MIT
 MIT
 
@@ -340,14 +340,14 @@ Apache License
  See the License for the specific language governing permissions and
  limitations under the License.
 
-@angular/platform-browser@6.1.4
+@angular/platform-browser@6.1.6
 MIT
 MIT
 
-@angular/router@6.1.4
+@angular/router@6.1.6
 MIT
 MIT
 
-@angular/core@6.1.4
+@angular/core@6.1.6
 MIT
 MIT

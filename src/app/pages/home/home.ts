@@ -43,6 +43,7 @@ export class HomeComponent implements OnInit {
     if (Capacitor.platform === 'web') {
       this.sendSMSWeb();
     } else { // Native
+      this.sendSMSNative();
     }
   }
 
@@ -66,14 +67,12 @@ export class HomeComponent implements OnInit {
     console.log('result', result);
   }
 
-  /*
   async sendSMSNative() {
 
     const { SMS } = Plugins;
 
-    const result = await SMS.echo({value: 'hola' });
+    const result = await SMS.sendSMS({number: '123456789', message: 'hello' });
     console.log('result', result);
   }
-  */
 
 }
