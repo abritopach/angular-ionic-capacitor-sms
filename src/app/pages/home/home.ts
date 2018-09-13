@@ -55,7 +55,8 @@ export class HomeComponent implements OnInit {
 
   async sendSMSWeb() {
     console.log('HomePage::sendSMS | method called');
-    const result = await SMSWeb.sendSMS({number: '123456789', message: 'hola' });
+    const smsForm = this.smsForm.value;
+    const result = await SMSWeb.sendSMS({number: smsForm.phoneNumber, message: smsForm.message });
     console.log('result', result);
   }
 
@@ -71,7 +72,9 @@ export class HomeComponent implements OnInit {
 
     const { SMS } = Plugins;
 
-    const result = await SMS.sendSMS({number: '123456789', message: 'hello' });
+    const smsForm = this.smsForm.value;
+
+    const result = await SMS.sendSMS({number: smsForm.phoneNumber, message: smsForm.message });
     console.log('result', result);
   }
 
