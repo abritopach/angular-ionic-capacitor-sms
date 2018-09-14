@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
     this.createForm();
     if (Capacitor.platform === 'web') {
       this.testPluginWeb();
+      this.configSMSWeb();
     } else { // Native
       this.testPluginNative();
     }
@@ -75,6 +76,12 @@ export class HomeComponent implements OnInit {
     const smsForm = this.smsForm.value;
 
     const result = await SMS.sendSMS({number: smsForm.phoneNumber, message: smsForm.message });
+    console.log('result', result);
+  }
+
+  async configSMSWeb() {
+    console.log('HomePage::configSMSWeb | method called');
+    const result = await SMSWeb.configEndpoint({endpoint: 'https://48cdd4dd.ngrok.io' });
     console.log('result', result);
   }
 
