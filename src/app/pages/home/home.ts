@@ -81,7 +81,7 @@ export class HomeComponent implements OnInit {
 
   async configSMSWeb() {
     console.log('HomePage::configSMSWeb | method called');
-    const result = await SMSWeb.configEndpoint({endpoint: 'https://48cdd4dd.ngrok.io' });
+    const result = await SMSWeb.configEndpoint({endpoint: 'https://ebf59238.ngrok.io', platform: 'nexmo' });
     console.log('result', result);
   }
 
