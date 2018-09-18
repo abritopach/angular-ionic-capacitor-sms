@@ -16,9 +16,12 @@ export class HomeComponent implements OnInit {
 
   currentYear: number;
   smsForm: FormGroup;
+  isWeb: string;
+  defaultPlatform = 'nexmo';
 
   constructor(private platform: Platform, private formBuilder: FormBuilder) {
     this.createForm();
+    this.isWeb = Capacitor.platform;
     if (Capacitor.platform === 'web') {
       this.testPluginWeb();
       this.configSMSWeb();
@@ -34,7 +37,8 @@ export class HomeComponent implements OnInit {
   createForm() {
     this.smsForm = this.formBuilder.group({
       phoneNumber: new FormControl('', Validators.required),
-      message: new FormControl('', Validators.required)
+      message: new FormControl('', Validators.required),
+      platform: new FormControl('', Validators.required)
     });
   }
 
@@ -81,8 +85,14 @@ export class HomeComponent implements OnInit {
 
   async configSMSWeb() {
     console.log('HomePage::configSMSWeb | method called');
-    const result = await SMSWeb.configEndpoint({endpoint: 'https://ebf59238.ngrok.io', platform: 'nexmo' });
+    const result = await SMSWeb.configEndpoint({endpoint: 'https://ebf59238.ngrok.io', platform: this.defaultPlatform });
     console.log('result', result);
+  }
+
+  selectedPlatform(value) {
+    console.log('HomePage::selectedPlatform | method called', value);
+    this.defaultPlatform = value;
+    this.configSMSWeb();
   }
 
 }

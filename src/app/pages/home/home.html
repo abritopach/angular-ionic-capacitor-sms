@@ -30,11 +30,23 @@
                                 This field is required.
                             </div>
                           </ion-item>
+                          <ion-item *ngIf="isWeb === 'web'">
+                            <ion-label position="floating">Platform</ion-label>
+                            <ion-select #platform formControlName="platform" interface="popover" (ionChange)="selectedPlatform(platform.value)">
+                                <ion-select-option value="nexmo">Nexmo</ion-select-option>
+                                <ion-select-option value="twilio">Twilio</ion-select-option>
+                            </ion-select>
+                          </ion-item>
+                          <ion-item *ngIf="smsForm.get('platform').hasError('required') && smsForm.get('platform').touched" no-lines>
+                            <div class="error-message">
+                                This field is required.
+                            </div>
+                          </ion-item>
                       </ion-list>
               </ion-card-content>
               <ion-row no-padding justify-content-center>
                   <ion-col col-auto text-right>
-                      <ion-button type="submit" fill="clear" size="small" color="primary">
+                      <ion-button [disabled]='!smsForm.valid' type="submit" fill="clear" size="small" color="primary">
                         <ion-icon name='send' slot="start"></ion-icon>
                         Send
                       </ion-button>
