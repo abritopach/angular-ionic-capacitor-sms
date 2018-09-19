@@ -1,0 +1,6 @@
+{
+  "appId": "com.capacitorsms.app",
+  "appName": "angular-ionic-capacitor-sms",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}

@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
     this.smsForm = this.formBuilder.group({
       phoneNumber: new FormControl('', Validators.required),
       message: new FormControl('', Validators.required),
-      platform: new FormControl('', Validators.required)
+      platform: new FormControl(this.defaultPlatform, Validators.required)
     });
   }
 
@@ -61,7 +61,7 @@ export class HomeComponent implements OnInit {
   async sendSMSWeb() {
     console.log('HomePage::sendSMS | method called');
     const smsForm = this.smsForm.value;
-    const result = await SMSWeb.sendSMS({number: smsForm.phoneNumber, message: smsForm.message });
+    const result = await SMSWeb.sendSMS({number: smsForm.phoneNumber.toString(), message: smsForm.message });
     console.log('result', result);
   }
 
@@ -79,7 +79,7 @@ export class HomeComponent implements OnInit {
 
     const smsForm = this.smsForm.value;
 
-    const result = await SMS.sendSMS({number: smsForm.phoneNumber, message: smsForm.message });
+    const result = await SMS.sendSMS({number: smsForm.phoneNumber.toString(), message: smsForm.message });
     console.log('result', result);
   }
 

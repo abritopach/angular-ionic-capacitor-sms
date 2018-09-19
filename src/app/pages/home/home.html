@@ -14,7 +14,7 @@
                       <ion-list inset>
                           <ion-item [class.has-error]="smsForm.get('phoneNumber').hasError('required') && smsForm.get('phoneNumber').touched">
                             <ion-label position="floating">Phone number *</ion-label>
-                            <ion-input type="text" formControlName="phoneNumber"></ion-input>
+                            <ion-input type="number" formControlName="phoneNumber"></ion-input>
                           </ion-item>
                           <ion-item *ngIf="smsForm.get('phoneNumber').hasError('required') && smsForm.get('phoneNumber').touched" no-lines>
                             <div class="error-message">
@@ -30,7 +30,7 @@
                                 This field is required.
                             </div>
                           </ion-item>
-                          <ion-item *ngIf="isWeb === 'web'">
+                          <ion-item *ngIf="isWeb === 'web'" [class.has-error]="smsForm.get('platform').hasError('required') && smsForm.get('platform').touched">
                             <ion-label position="floating">Platform</ion-label>
                             <ion-select #platform formControlName="platform" interface="popover" (ionChange)="selectedPlatform(platform.value)">
                                 <ion-select-option value="nexmo">Nexmo</ion-select-option>
